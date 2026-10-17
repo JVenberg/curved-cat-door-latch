@@ -72,3 +72,7 @@ Every overlap the build prints should read `0.000`.
 The measurement that matters most is the **hinge pivot**: the actual axis the door rotates around, not the edge of the hinge barrel. If it's wrong, the parts rub harder the farther the door opens.
 
 See [NOTES.md](NOTES.md) for the coordinate frame, every measured value, design reasoning and lessons learned from test installs.
+
+## License
+
+[CC0 1.0](LICENSE), public domain, same as the original design.
