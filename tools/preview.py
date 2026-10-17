@@ -1,4 +1,4 @@
-"""Render out/preview.png: plan and 3D views of the parts installed with the door held at the slot.
+"""Render out/preview.png, a quick four-view check of the parts installed (README images: tools/render.py).
 
 Run from the repo root:
   uv run --with build123d --with trimesh --with matplotlib --with scipy --with networkx python tools/preview.py
@@ -58,12 +58,13 @@ def draw(ax, keys, el, az, lim):
 
 
 everything = ["door", "jamb", "casing", "plate", "arm"]
+scene = ((560, 780), (-110, 230), (-60, 60))
 fig = plt.figure(figsize=(18, 12))
 views = [
-    (everything, 90, -90, ((560, 780), (-110, 220), (-60, 60)), "plan, door held at slot"),
-    (everything, 25, -130, ((560, 780), (-110, 220), (-60, 60)), "assembly"),
-    (["plate", "arm"], 15, 170, ((650, 750), (-60, 220), (-40, 40)), "parts, door side"),
-    (["plate", "arm"], 15, -10, ((650, 750), (-60, 220), (-40, 40)), "parts, outside"),
+    (everything, 90, -90, scene, "plan, door held at slot"),
+    (everything, 25, -130, scene, "assembly"),
+    (["plate", "arm"], 15, 170, ((650, 750), (-60, 230), (-40, 40)), "parts, door side"),
+    (["plate", "arm"], 15, -10, ((650, 750), (-60, 230), (-40, 40)), "parts, outside"),
 ]
 for i, (keys, el, az, lim, title) in enumerate(views, 1):
     ax = fig.add_subplot(2, 2, i, projection="3d")
@@ -71,3 +72,5 @@ for i, (keys, el, az, lim, title) in enumerate(views, 1):
     ax.set_title(title)
 plt.tight_layout()
 plt.savefig(ROOT / "out" / "preview.png", dpi=70)
+plt.close(fig)
+

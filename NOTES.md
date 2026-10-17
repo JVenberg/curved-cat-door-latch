@@ -26,7 +26,7 @@ These are all in the `P` dataclass in `cat_door_latch.py`.
 | Trim: 17 mm deep | 5 mm reveal back from the strike face. |
 | Latch bolt: 12.7 mm throw | The first 6.7 mm is square and the last 6 mm is beveled. Bevel faces the stop side. |
 
-The user is not fluent in door terminology. "Outside edge" means the room side, and "door frame" means the jamb. When a measurement is ambiguous, confirm it with a drawn diagram (matplotlib PNG), not ASCII art.
+In conversation, "outside edge" meant the room side and "door frame" meant the jamb. When a measurement is ambiguous, confirm it with a drawn diagram, not ASCII art.
 
 ## How the geometry works
 
@@ -75,12 +75,12 @@ The user is not fluent in door terminology. "Outside edge" means the room side, 
 2. **Jamb edge was off by 17 mm.** The 15.7 mm measurement was taken to the trim's front face, but the model used it as the distance to the jamb edge. The arm root stopped 16.5 mm short of the frame. The pivot-to-frame measurement (15.9) cross-checks it, so keep both consistent.
 3. **Closing jam.** The bolt's 6.7 mm square face hit the arm tip because the old ramp was only 4 mm deep. The swing check had run with the bolt retracted, which hid it.
 4. **Arm flex.** An unsupported arm root lets the screws pull the arm into the door's path. The root has to bear on the trim. Clamping it hard against the jamb edge also bent the arm, hence the 1.5 mm `root_gap`.
-5. **Nuts.** The user's M3 nuts are 2.4 mm. That is too thick for a pocket where the plate is under about 3 mm, which is why the bolts moved out to where the plate is thicker. Thin jam nuts (1.8 mm) would allow the bolts closer. A self-tapping version was tried and rejected as too weak. Heat-set inserts (3 mm long, 4.0 to 4.2 mm hole) would fit at the current bolt positions with a reprint of the plate only.
-6. **Removed experiments.**
+5. **Nuts.** The M3 nuts on hand are 2.4 mm. That is too thick for a pocket where the plate is under about 3 mm, which is why the bolts moved out to where the plate is thicker. Thin jam nuts (1.8 mm) would allow the bolts closer. A self-tapping version was tried and rejected as too weak. Heat-set inserts (3 mm long, 4.0 to 4.2 mm hole) would fit at the current bolt positions with a reprint of the plate only.
+6. **Dropped ideas.**
    - Arched or rounded slot tops: rejected, so the slot is plain rectangular.
    - Door edge bevel: reverted; the model uses a square door edge.
-   - Slot 1: removed at the user's request.
-   - Flat-head M3 screws: the user only has socket heads.
+   - Slot 1: removed because it wasn't needed.
+   - Flat-head M3 screws: only socket heads were on hand.
 7. **Printing.** The arm lifted off its brim. Fix with brim-object gap 0 (see README).
 
 ## Open items
